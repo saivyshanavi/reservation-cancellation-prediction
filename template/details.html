@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+       <style>
+        .details-page {
+    background-image:url("https://wallpapercave.com/wp/wp1874173.jpg");
+    width:100%;
+    min-height:50vh;
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+    padding:10px 8%;
+}
+
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+
+.container {
+    background-color: black;
+    height:280vh;
+    background-size:cover;
+}
+
+
+nav {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 0px;
+    background-image: linear-gradient(to left,rgb(4, 4, 33),rgb(9, 14, 90));
+    
+   
+}
+.main-heading {
+    font-size:25px;
+    font-family:'Roboto';
+      font-weight:bold;
+      color:#ffffff;
+      text-align:left;
+    
+}
+ul {
+    list-style:none;
+    width:100%;
+    text-align:right;
+    padding-right:60px;
+}
+nav ul li {
+    display:inline-block;
+    margin:10px 20px;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration:none;
+    font-family:"Roboto";
+    font-weight:500;
+    font-size:20px;
+
+}
+.button {
+    height:40px;
+    width:90px;
+    font-family:'Roboto';
+    color:white; 
+    font-size:18px;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    background-color:transparent;
+    border-width:0;
+    
+
+}
+
+.link {
+    text-decoration:none;
+    color:white; 
+    font-size:20px;
+    font-family:'Roboto';
+    font-weight:500;
+}
+
+.input {
+    font-family:'Roboto';
+    color:white; 
+    font-size:25px;
+    font-weight:800;
+    padding:20px;
+}
+.heading-background {
+    background-image:linear-gradient(to right, black,rgb(0, 0, 0));
+   
+}
+
+.form-feilds-container {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.name {
+    font-family:'Roboto';
+    color:white; 
+    font-size:20px;
+    font-weight:800;
+    padding:20px;
+}
+
+.form-row {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:180px;
+    padding-top:20px;
+    padding-right:20px;
+}
+
+.form-container {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.form-row2{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding-right:2px;
+    padding-left:49px;
+}
+
+
+.form-row3{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding-right:80px;
+    padding-left:50px;
+    
+}
+
+
+
+
+
+.form-container1 {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    
+}
+
+.btn-predict {
+    height:40px;
+    width:90px;
+    font-family:'Roboto';
+    color:white; 
+    border-width:0;
+    border-radius:8px;
+    padding-left:20px;
+    padding-right:5px;
+    background-color:rgb(0, 0, 255);
+    font-size:18px;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+}
+.link2 {
+    text-decoration:none;
+    color:#ffffff;
+
+}
+.btn-container {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.form-row4 {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:190px;
+    padding-top:20px;
+    padding-right:20px;
+}
+.form-row5{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+   
+    padding-left:200px;
+    padding-top:20px;
+    padding-right:40px;
+}
+
+.form-row6 {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:200px;
+    padding-top:20px;
+    padding-right:20px;
+    
+}
+
+       </style>
+    </head>
+    <body>
+
+        <div class="container"> 
+            <nav>
+                <h1 class="main-heading">Reservation Cancellation Prediction</h1>
+             <ul>
+                <li> <a href="/home">Home</a></li>
+                
+             </ul>
+             <button class="button"> <a class="link" href="/details"> Predict </a></button>
+            </nav>
+        <div class="details-page">
+            
+             <div class="heading-background">
+                <h1 class="input">Input the values for Prediction</h1>
+             </div>
+
+        </div>
+        <div class="form-feilds-container">
+            <form action="/predict" method="post">
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="name">
+                         Number of Adults:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="no_of_adults" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row">
+                        <div class="name">
+                         Number of Children:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="no_of_children" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row">
+                        <div class="name">
+                         Number of Weekend Nights:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="no_of_weekend_nights" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-row">
+                        <div class="name">
+                         Number of Weekday Nights:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                          <input type="number" name="no_of_week_nights" min="0" max="17" placeholder="0 to 17 in whole numbers" required="required" step="any">
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                
+                    <div class="form-row2">
+                        <div class="name">
+                         Type of Meal Plan:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="type_of_meal_plan" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row">
+                        <div class="name">
+                         Parking Space Requirement:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="required_car_parking_space" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="form-container1">
+                    <div class="form-row5">
+                        <div class="name">
+                         Room Type:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                           <select name="room_type_reserved" required="required">
+                          <option>0</option>
+                          <option>1</option>
+                           </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row3">
+                        <div class="name">
+                         Lead Time:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                          <input type="number" name="lead_time" min="0" max="443" placeholder="0 to 443 in whole numbers" required="required" step="any">
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row3">
+                        <div class="name">
+                         Year of Arrival:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select" id="arrival_year" name="arrival_year">
+                                  
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    
+                                </select>
+                                
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+
+                </div>
+
+                <div class="form-container1">
+                    <div class="form-row">
+                        <div class="name">
+                         Month of Arrival:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select" id="arrival_month" name="arrival_month">
+                                
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row5">
+                        <div class="name">
+                         Date of Arrival:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                          <input type="number" name="arrival_date" min="0" max="31" placeholder="0 to 31 in whole numbers" required="required" step="any">
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row5">
+                        <div class="name">
+                         Market Segment Type:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select"  name="market_segment_type">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>4</option>
+                                </select>
+                                
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+
+                </div>
+                <div class="form-container1">
+                    <div class="form-row">
+                        <div class="name">
+                         Repeated Guest:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select"  name="repeated_guest">
+                                <option>0</option>
+                                <option>1</option>
+                                </select>
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row6">
+                        <div class="name">
+                         Number of Previous Cancellations:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select"  name="no_of_previous_cancellations">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    
+                                </select>
+                                
+                          
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    <div class="form-row">
+                        <div class="name">
+                         Previous Booking NOT Cancelled:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input type="number" name="no_of_previous_booking_not_canceled" min="0" max="58" placeholder="0 to 58 in whole numbers" required="required" step="any">
+                                
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+
+                </div>
+                <div class="form-container1">
+                    <div class="form-row">
+                        <div class="name">
+                         Average Price Per Room:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input type="number" name="avg_price_per_room" min="0" max="540" placeholder="0 to 540 in single decimal" required="required" step="0.01">
+                                
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="name">
+                         Number of Special Requests:
+                        </div>
+                        <div class="value">
+                            <div class="input-group">
+                                <select class="form-select"  name="no_of_special_requests">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    </select>
+                                
+                                
+                           <div class="select-dropdown">
+    
+                           </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+
+                </div>
+                <div class="btn-container">
+                    <button class="btn-predict" type="submit">Predict</button>
+                </div>
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+
+            </form>
+               
+                    
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+       
+      
+            
+        
+     </body>
+</html>

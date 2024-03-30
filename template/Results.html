@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+      <style>
+        * {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+
+.container {
+    background-color: black;
+    height:150vh;
+    background-size:cover;
+}
+
+
+nav {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 0px;
+    background-image: linear-gradient(to left,rgba(6, 3, 3, 0.831),rgb(11, 12, 19));
+    
+   
+}
+.main-heading {
+    font-size:25px;
+    font-family:'Roboto';
+      font-weight:bold;
+      color:#ffffff;
+      text-align:left;
+    
+}
+ul {
+    list-style:none;
+    width:100%;
+    text-align:right;
+    padding-right:60px;
+}
+nav ul li {
+    display:inline-block;
+    margin:10px 20px;
+}
+
+nav ul li a {
+    color:white;
+    text-decoration:none;
+    font-family:"Roboto";
+    font-weight:500;
+    font-size:20px;
+
+}
+.details-page {
+    background-image:url("https://i.pinimg.com/originals/55/36/96/55369602de776f2ed3246bd549526615.jpg");
+    width:100%;
+    min-height:60vh;
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+    padding:10px 8%;
+}
+.button {
+    height:40px;
+    width:90px;
+    font-family:'Roboto';
+    color:white; 
+    font-size:20px;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    background-color:transparent;
+    border-width:0;
+    
+
+}
+.link {
+    text-decoration:none;
+    color:#ffffff;
+}
+.input {
+    color:#ffffff;
+    font-family:'Bree Serif';
+    font-size:40px;
+    font-weight:500;
+}
+.para {
+    color:#ffffff;
+    font-family:'Roboto';
+    font-size:20px;
+    font-weight:500;
+}
+
+.output {
+    color:#ffffff;
+    font-family:'Roboto';
+    font-size:40px;
+    font-weight:500;
+}
+.result-container {
+    padding:30px;
+}
+.outputs-con {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+      </style>
+    </head>
+    <body>
+        <div class="container"> 
+            <nav>
+                <h1 class="main-heading">Reservation Cancellation Prediction</h1>
+             <ul>
+                <li> <a href="/home">Home</a></li>
+               
+             </ul>
+             <button class="button"> <a class="link" href="/details"> Predict </a></button>
+            </nav>
+        <div class="details-page">
+            
+             <div class="heading-background">
+                <h1 class="input">Results</h1>
+             </div>
+
+        </div>
+        <div class="result-container">
+            <p class="para">Based on the inputs the model predict that</p>
+            <div class="text-center outputs-con">
+                <h2 class="output">{{prediction_text}}</h2>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
