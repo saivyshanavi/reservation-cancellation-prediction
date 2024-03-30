@@ -6,7 +6,7 @@ from flask.templating import render_template,request
 from flask import Flask
 
 
-template_folder = 'C:/Users/saivy/Documents/projectNew/template'
+template_folder = 'template'
 
 
 app = Flask(__name__,template_folder=template_folder)
