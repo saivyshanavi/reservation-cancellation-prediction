@@ -11,7 +11,7 @@ template_folder = 'template'
 
 app = Flask(__name__,template_folder=template_folder)
 
-with open("C:/Users/saivy/Documents/projectNew/model.pkl","rb") as model_file:
+with open("model.pkl","rb") as model_file:
               model=pickle.load(model_file)
 
 
